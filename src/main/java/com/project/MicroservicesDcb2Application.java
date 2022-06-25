@@ -13,6 +13,7 @@ public class MicroservicesDcb2Application {
     // @LoadBalanced annotation in MicroservicesDcb2Application.class
     // Changed the below url from localhost to DEPARTMENT-SERVICE
     // restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" + user.getDepartmentId(),Department.class);
+    // Added additional details in application.yml file.
     public static void main(String[] args) {
 
         SpringApplication.run(MicroservicesDcb2Application.class, args);
