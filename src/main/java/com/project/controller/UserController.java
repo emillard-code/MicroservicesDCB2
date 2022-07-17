@@ -1,13 +1,11 @@
 package com.project.controller;
 
+import com.project.VO.ResponseTemplateVO;
 import com.project.model.User;
 import com.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -22,6 +20,14 @@ public class UserController {
 
         log.info("Inside saveUser of UserController");
         return userService.saveUser(user);
+
+    }
+
+    @GetMapping("/{id}")
+    public ResponseTemplateVO getUserWithDepartment(@PathVariable("id") Long userId) {
+
+        log.info("Inside getUserWithDepartment of UserController");
+        return userService.getUserWithDepartment(userId);
 
     }
 
